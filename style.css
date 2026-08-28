@@ -1,0 +1,1517 @@
+/* =========================================================
+   FALLEN ANGELS — MAIN STYLE
+========================================================= */
+
+
+/* ---------------------------------------------------------
+   RESET
+--------------------------------------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #050505;
+    color: #f4f4f4;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* ---------------------------------------------------------
+   BACKGROUND ATMOSPHERE
+--------------------------------------------------------- */
+
+body::before {
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(110, 0, 110, 0.10),
+            transparent 35%
+        );
+
+    z-index: -1;
+}
+
+
+/* ---------------------------------------------------------
+   FALLING PETALS
+--------------------------------------------------------- */
+
+#petals {
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 20;
+}
+
+.petal {
+    position: absolute;
+
+    top: -30px;
+
+    width: 12px;
+    height: 18px;
+
+    border-radius: 100% 0 100% 0;
+
+    background: #761476;
+
+    opacity: 0.55;
+
+    animation:
+        fall var(--time) linear var(--delay) infinite,
+        sway 3s ease-in-out infinite;
+}
+
+
+/* Petal falling */
+
+@keyframes fall {
+
+    to {
+        top: 110vh;
+
+        transform:
+            translateX(100px)
+            rotate(500deg);
+
+        opacity: 0;
+    }
+
+}
+
+
+/* Petal movement */
+
+@keyframes sway {
+
+    50% {
+        margin-left: 40px;
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   HEADER
+--------------------------------------------------------- */
+
+.site-header {
+
+    height: 105px;
+
+    background: rgba(0, 0, 0, 0.94);
+
+    border-bottom: 1px solid #292929;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 0 32px;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+
+    backdrop-filter: blur(12px);
+}
+
+
+/* Band logo */
+
+.logo {
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 26px;
+
+    font-weight: 900;
+
+    letter-spacing: 7px;
+
+}
+
+
+/* ---------------------------------------------------------
+   NAVIGATION
+--------------------------------------------------------- */
+
+nav {
+
+    margin-left: auto;
+
+    display: flex;
+
+    gap: 28px;
+
+}
+
+nav a {
+
+    color: #999;
+
+    text-decoration: none;
+
+    text-transform: uppercase;
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    transition: 0.3s;
+
+}
+
+nav a:hover {
+
+    color: #ffffff;
+
+}
+
+
+/* Mobile menu button */
+
+.menu-toggle {
+
+    display: none;
+
+    margin-left: auto;
+
+    background: none;
+
+    border: none;
+
+    color: white;
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+}
+
+
+/* ---------------------------------------------------------
+   HERO
+--------------------------------------------------------- */
+
+.hero {
+
+    min-height: 900px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 125px 25px;
+
+    position: relative;
+
+    background:
+
+        radial-gradient(
+            ellipse at center 28%,
+            rgba(130, 0, 130, 0.28),
+            transparent 44%
+        );
+
+}
+
+
+/* Giant background flower */
+
+.hero-flower {
+
+    position: absolute;
+
+    top: 120px;
+
+    font-size: 360px;
+
+    color: rgba(120, 0, 120, 0.025);
+
+    pointer-events: none;
+
+}
+
+
+/* Small eyebrow text */
+
+.eyebrow {
+
+    margin-bottom: 35px;
+
+    color: #777;
+
+    letter-spacing: 5px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+}
+
+
+/* ---------------------------------------------------------
+   HERO TITLE
+--------------------------------------------------------- */
+
+.hero h1 {
+
+    position: relative;
+
+    z-index: 2;
+
+    font-size: clamp(
+        65px,
+        14vw,
+        150px
+    );
+
+    line-height: 0.9;
+
+    font-weight: 900;
+
+    letter-spacing: 4px;
+
+    color: #f5f5f5;
+
+    text-shadow:
+
+        0 0 6px #ffffff,
+
+        0 0 18px rgba(255, 255, 255, 0.7),
+
+        0 0 45px rgba(160, 0, 160, 0.8);
+
+}
+
+
+/* ---------------------------------------------------------
+   GENRE TEXT
+--------------------------------------------------------- */
+
+.genres {
+
+    margin-top: 65px;
+
+    color: #aaaaaa;
+
+    letter-spacing: 8px;
+
+    line-height: 1.8;
+
+    font-weight: bold;
+
+}
+
+
+/* ---------------------------------------------------------
+   MAIN BUTTON
+--------------------------------------------------------- */
+
+.button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-top: 60px;
+
+    min-width: 350px;
+
+    height: 88px;
+
+    border: 1px solid #aaaaaa;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    background: transparent;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    transition: 0.3s;
+
+}
+
+.button:hover {
+
+    background: #ffffff;
+
+    color: #000000;
+
+    box-shadow:
+        0 0 40px rgba(170, 0, 170, 0.5);
+
+}
+
+
+/* ---------------------------------------------------------
+   SECTIONS
+--------------------------------------------------------- */
+
+.section {
+
+    max-width: 1400px;
+
+    margin: auto;
+
+    padding: 120px 6%;
+
+}
+
+
+/* Section numbers */
+
+.section-number {
+
+    color: #777;
+
+    letter-spacing: 5px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+}
+
+
+/* Big section headings */
+
+.section h2 {
+
+    font-size: clamp(
+        55px,
+        10vw,
+        100px
+    );
+
+    line-height: 0.95;
+
+    margin: 35px 0 70px;
+
+    letter-spacing: 5px;
+
+}
+
+
+/* ---------------------------------------------------------
+   ABOUT
+--------------------------------------------------------- */
+
+.split {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 70px;
+
+    max-width: 1050px;
+
+}
+
+
+.split p {
+
+    font-size: clamp(
+        21px,
+        3vw,
+        31px
+    );
+
+    line-height: 1.75;
+
+    color: #999;
+
+    font-weight: 600;
+
+}
+
+
+/* ---------------------------------------------------------
+   QUOTE
+--------------------------------------------------------- */
+
+.quote {
+
+    min-height: 450px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+}
+
+
+/* Purple dividing line */
+
+.broken-line {
+
+    height: 1px;
+
+    width: 100%;
+
+    background: #531053;
+
+    margin-bottom: 50px;
+
+}
+
+
+/* Quote */
+
+.quote p {
+
+    font-size: clamp(
+        30px,
+        6vw,
+        70px
+    );
+
+    font-weight: 900;
+
+    letter-spacing: 3px;
+
+    line-height: 1.1;
+
+}
+
+
+/* ---------------------------------------------------------
+   MUSIC
+--------------------------------------------------------- */
+
+.track-grid {
+
+    display: grid;
+
+    gap: 28px;
+
+}
+
+
+/* Music card */
+
+.track {
+
+    display: grid;
+
+    grid-template-columns:
+        70px
+        1fr
+        auto;
+
+    gap: 25px;
+
+    align-items: center;
+
+    border: 1px solid #333333;
+
+    padding: 42px;
+
+    color: white;
+
+    text-decoration: none;
+
+    background: #0d0d0d;
+
+    transition: 0.3s;
+
+}
+
+
+/* Music hover */
+
+.track:hover {
+
+    border-color: #888888;
+
+    transform: translateX(8px);
+
+    box-shadow:
+        -10px 0 35px rgba(90, 0, 90, 0.15);
+
+}
+
+
+/* Track number */
+
+.track span {
+
+    color: #666666;
+
+}
+
+
+/* Track name */
+
+.track strong {
+
+    font-size: 28px;
+
+}
+
+
+/* Genre */
+
+.track small {
+
+    color: #666666;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+}
+
+
+/* ---------------------------------------------------------
+   MUSIC PAGE
+--------------------------------------------------------- */
+
+.page {
+
+    max-width: 1400px;
+
+    margin: auto;
+
+    padding: 100px 6%;
+
+    min-height: calc(100vh - 180px);
+
+}
+
+
+.page h1 {
+
+    font-size: clamp(
+        65px,
+        14vw,
+        150px
+    );
+
+    line-height: 0.9;
+
+    font-weight: 900;
+
+    letter-spacing: 4px;
+
+    margin: 30px 0 35px;
+
+}
+
+
+.lead {
+
+    font-size: clamp(
+        21px,
+        3vw,
+        31px
+    );
+
+    line-height: 1.75;
+
+    color: #999;
+
+    font-weight: 600;
+
+}
+
+
+/* ---------------------------------------------------------
+   MUSIC PLAYER
+--------------------------------------------------------- */
+
+.music-list {
+
+    display: grid;
+
+    gap: 30px;
+
+    margin-top: 80px;
+
+}
+
+
+.music-card {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        auto;
+
+    gap: 30px;
+
+    padding: 45px;
+
+    border: 1px solid #333333;
+
+    background: #0c0c0c;
+
+}
+
+
+.music-card h2 {
+
+    font-size: 38px;
+
+    margin: 12px 0;
+
+}
+
+
+.music-card p {
+
+    color: #777777;
+
+}
+
+
+/* Track number */
+
+.track-no {
+
+    color: #6d176d;
+
+    letter-spacing: 3px;
+
+}
+
+
+/* Play button */
+
+.play {
+
+    width: 65px;
+
+    height: 65px;
+
+    border: 1px solid #777777;
+
+    border-radius: 50%;
+
+    background: transparent;
+
+    color: white;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+.play:hover {
+
+    background: white;
+
+    color: black;
+
+    box-shadow:
+        0 0 25px rgba(160, 0, 160, 0.6);
+
+}
+
+
+/* Audio bar */
+
+.music-card audio {
+
+    grid-column: 1 / -1;
+
+    width: 100%;
+
+}
+
+
+/* ---------------------------------------------------------
+   MEMBERS
+--------------------------------------------------------- */
+
+.member-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(240px, 1fr)
+        );
+
+    gap: 25px;
+
+    margin-top: 80px;
+
+}
+
+
+.member {
+
+    min-height: 330px;
+
+    padding: 40px;
+
+    border: 1px solid #333333;
+
+    background: #0c0c0c;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    transition: 0.3s;
+
+}
+
+
+.member:hover {
+
+    border-color: #777777;
+
+    background: #101010;
+
+}
+
+
+/* Placeholder for member photos */
+
+.member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: 0.5s;
+}
+
+.member:hover .member-image img {
+    filter: grayscale(0%);
+    transform: scale(1.04);
+}
+
+
+.member h2 {
+
+    font-size: 30px;
+
+    margin-bottom: 12px;
+
+}
+
+
+.member p {
+
+    color: #777777;
+
+}
+
+
+/* =========================================================
+   SHOW PAGE
+========================================================= */
+
+.show-date {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 100px;
+
+    border-right: 1px solid #333333;
+
+    padding-right: 30px;
+
+}
+
+
+.show-date .month {
+
+    color: #761476;
+
+    font-size: 14px;
+
+    font-weight: 900;
+
+    letter-spacing: 4px;
+
+}
+
+
+.show-date strong {
+
+    font-size: 65px;
+
+    line-height: 1;
+
+    margin: 8px 0;
+
+}
+
+
+.show-date .year {
+
+    color: #555555;
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+}
+
+
+.show-info h3 {
+
+    font-size: 30px;
+
+    margin: 10px 0 15px;
+
+}
+
+
+.show-info p {
+
+    color: #777777;
+
+    margin-top: 5px;
+
+}
+
+
+.show-type {
+
+    color: #761476;
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    font-weight: bold;
+
+}
+
+
+.show-button {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 130px;
+
+    height: 55px;
+
+    border: 1px solid #777777;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+    transition: .3s;
+
+}
+
+
+.show-button:hover {
+
+    background: white;
+
+    color: black;
+
+}
+
+
+.show-button.disabled {
+
+    color: #444444;
+
+    border-color: #333333;
+
+    cursor: default;
+
+}
+
+
+.show-button.disabled:hover {
+
+    background: transparent;
+
+    color: #444444;
+
+}
+
+/* =========================================================
+   CONTACT PAGE
+========================================================= */
+
+
+/* Contact options */
+
+.contact-options {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            1fr
+        );
+
+    gap: 25px;
+
+    margin-top: 80px;
+
+}
+
+
+.contact-option {
+
+    min-height: 320px;
+
+    padding: 40px;
+
+    border: 1px solid #333333;
+
+    background: #0b0b0b;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    transition: 0.3s;
+
+}
+
+
+.contact-option:hover {
+
+    border-color: #777777;
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 50px rgba(80, 0, 80, 0.15);
+
+}
+
+
+.contact-number {
+
+    color: #6d176d;
+
+    font-weight: 900;
+
+    letter-spacing: 3px;
+
+    margin-bottom: auto;
+
+}
+
+
+.contact-option h2 {
+
+    font-size: 30px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.contact-option p {
+
+    color: #777777;
+
+    line-height: 1.6;
+
+    margin-bottom: 25px;
+
+}
+
+
+.contact-option a {
+
+    color: white;
+
+    text-decoration: none;
+
+    border-bottom: 1px solid #555555;
+
+    padding-bottom: 8px;
+
+    transition: 0.3s;
+
+}
+
+
+.contact-option a:hover {
+
+    color: #b84bb8;
+
+    border-color: #b84bb8;
+
+}
+
+
+/* Contact form */
+
+.contact-section {
+
+    padding-left: 0;
+
+    padding-right: 0;
+
+}
+
+
+.contact-form {
+
+    max-width: 800px;
+
+    margin-top: 60px;
+
+    display: grid;
+
+    gap: 30px;
+
+}
+
+
+.contact-form label {
+
+    display: grid;
+
+    gap: 12px;
+
+    color: #777777;
+
+    font-size: 12px;
+
+    font-weight: 900;
+
+    letter-spacing: 3px;
+
+}
+
+
+.contact-form input,
+.contact-form textarea {
+
+    width: 100%;
+
+    background: #080808;
+
+    border: 1px solid #333333;
+
+    color: white;
+
+    padding: 20px;
+
+    font-family: inherit;
+
+    font-size: 16px;
+
+    outline: none;
+
+    resize: vertical;
+
+    transition: 0.3s;
+
+}
+
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+
+    color: #444444;
+
+}
+
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+
+    border-color: #8a208a;
+
+    box-shadow:
+        0 0 20px rgba(138, 32, 138, 0.12);
+
+}
+
+
+.contact-form .button {
+
+    border: 1px solid #777777;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+}
+
+
+/* Social links */
+
+.social-links {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            1fr
+        );
+
+    gap: 20px;
+
+    max-width: 800px;
+
+}
+
+
+.social-links a {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    height: 100px;
+
+    border: 1px solid #333333;
+
+    background: #0b0b0b;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    font-weight: 900;
+
+    letter-spacing: 4px;
+
+    transition: 0.3s;
+
+}
+
+
+.social-links a:hover {
+
+    background: white;
+
+    color: black;
+
+    border-color: white;
+
+}
+
+
+/* ---------------------------------------------------------
+   CONTACT MOBILE
+--------------------------------------------------------- */
+
+@media (max-width: 700px) {
+
+    .contact-options {
+
+        grid-template-columns: 1fr;
+
+        margin-top: 60px;
+
+    }
+
+
+    .contact-option {
+
+        min-height: 280px;
+
+    }
+
+
+    .contact-section {
+
+        padding-left: 0;
+
+        padding-right: 0;
+
+    }
+
+
+    .social-links {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .social-links a {
+
+        height: 80px;
+
+    }
+
+}
+
+/* ---------------------------------------------------------
+   FOOTER
+--------------------------------------------------------- */
+
+footer {
+
+    border-top: 1px solid #222222;
+
+    padding: 70px 30px;
+
+    text-align: center;
+
+    color: #444444;
+
+    letter-spacing: 5px;
+
+    font-size: 12px;
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+
+    /* Header */
+
+    .site-header {
+
+        height: 90px;
+
+        padding: 0 22px;
+
+    }
+
+
+    .logo {
+
+        font-size: 20px;
+
+        letter-spacing: 5px;
+
+    }
+
+
+    /* Mobile menu */
+
+    .menu-toggle {
+
+        display: block;
+
+    }
+
+
+    nav {
+
+        display: none;
+
+        position: absolute;
+
+        top: 90px;
+
+        left: 0;
+
+        right: 0;
+
+        background: #050505;
+
+        border-bottom: 1px solid #333333;
+
+        flex-direction: column;
+
+        padding: 25px 30px;
+
+        gap: 25px;
+
+    }
+
+
+    nav.open {
+
+        display: flex;
+
+    }
+
+
+    /* Hero */
+
+    .hero {
+
+        min-height: 850px;
+
+        padding-top: 115px;
+
+    }
+
+
+    .hero h1 {
+
+        font-size: 76px;
+
+    }
+
+
+    .genres {
+
+        font-size: 14px;
+
+        letter-spacing: 5px;
+
+    }
+
+
+    .button {
+
+        min-width: 280px;
+
+    }
+
+
+    /* Sections */
+
+    .section,
+    .page {
+
+        padding: 85px 28px;
+
+    }
+
+
+    /* About */
+
+    .split {
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+    }
+
+
+    /* Music */
+
+    .track {
+
+        grid-template-columns:
+            35px
+            1fr;
+
+        padding: 30px 20px;
+
+    }
+
+
+    .track small {
+
+        grid-column: 2;
+
+    }
+
+
+    .track strong {
+
+        font-size: 22px;
+
+    }
+
+
+    /* Music cards */
+
+    .music-card {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .music-card audio {
+
+        grid-column: 1;
+
+    }
+
+
+    /* Shows */
+
+    .show {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    /* Flower */
+
+    .hero-flower {
+
+        font-size: 230px;
+
+    }
+
+}

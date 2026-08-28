@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Fallen Angels</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #050505;
+    color: #f5f5f5;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    height: 106px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 32px;
+
+    background: #000;
+
+    border-bottom: 2px solid #222;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 900;
+
+    letter-spacing: 8px;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 850px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: flex-start;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 125px 25px 100px;
+
+    background:
+        radial-gradient(
+            ellipse at center 25%,
+            rgba(130, 0, 130, 0.25),
+            rgba(5, 5, 5, 0) 38%
+        );
+}
+
+.hero-title {
+    font-size: clamp(65px, 15vw, 150px);
+
+    line-height: 0.95;
+
+    font-weight: 900;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    color: #f5f5f5;
+
+    text-shadow:
+        0 0 5px #fff,
+        0 0 15px rgba(255,255,255,.8),
+        0 0 30px rgba(180,0,180,.8),
+        0 0 60px rgba(130,0,130,.7);
+
+    max-width: 900px;
+}
+
+.hero-subtitle {
+    margin-top: 65px;
+
+    max-width: 800px;
+
+    font-size: clamp(18px, 4vw, 28px);
+
+    font-weight: 600;
+
+    letter-spacing: 10px;
+
+    line-height: 1.6;
+
+    color: #aaa;
+
+    text-transform: uppercase;
+}
+
+.hero-button {
+    margin-top: 65px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 375px;
+    max-width: 90vw;
+
+    height: 92px;
+
+    border: 2px solid #aaa;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 28px;
+
+    font-weight: 700;
+
+    transition: .3s ease;
+}
+
+.hero-button:hover {
+    background: #fff;
+    color: #000;
+
+    box-shadow:
+        0 0 20px white,
+        0 0 50px rgba(150,0,150,.7);
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+section {
+    padding: 100px 6%;
+}
+
+.section-title {
+    font-size: clamp(55px, 11vw, 95px);
+
+    font-weight: 900;
+
+    letter-spacing: 6px;
+
+    margin-bottom: 70px;
+
+    text-transform: uppercase;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+    min-height: 700px;
+}
+
+.about-text {
+    max-width: 1000px;
+
+    font-size: clamp(23px, 4vw, 34px);
+
+    line-height: 1.8;
+
+    font-weight: 600;
+
+    color: #aaa;
+}
+
+.about-text p + p {
+    margin-top: 70px;
+}
+
+/* =========================
+   MUSIC
+========================= */
+
+.music {
+    min-height: 800px;
+}
+
+.song {
+    width: 100%;
+
+    min-height: 245px;
+
+    margin-bottom: 50px;
+
+    padding: 65px;
+
+    border: 2px solid #303030;
+
+    background: #101010;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    transition: .3s ease;
+}
+
+.song:hover {
+    border-color: #aaa;
+
+    background: #151515;
+
+    transform: translateY(-3px);
+}
+
+.song h3 {
+    font-size: clamp(28px, 5vw, 45px);
+
+    font-weight: 800;
+
+    margin-bottom: 25px;
+}
+
+.song p {
+    font-size: 25px;
+
+    font-weight: 600;
+
+    color: #777;
+}
+
+/* =========================
+   MEMBERS
+========================= */
+
+.members {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 30px;
+}
+
+.member {
+    min-height: 250px;
+
+    border: 2px solid #303030;
+
+    padding: 40px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+.member h3 {
+    font-size: 32px;
+
+    margin-bottom: 15px;
+}
+
+.member p {
+    color: #777;
+
+    font-size: 20px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    border-top: 2px solid #222;
+
+    padding: 80px 30px;
+
+    text-align: center;
+
+    color: #555;
+
+    letter-spacing: 4px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    header {
+        height: 105px;
+
+        padding: 0 28px;
+    }
+
+    .logo {
+        font-size: 27px;
+        letter-spacing: 7px;
+    }
+
+    .hero {
+        min-height: 850px;
+
+        padding-top: 125px;
+    }
+
+    .hero-title {
+        font-size: 78px;
+
+        letter-spacing: 3px;
+    }
+
+    .hero-subtitle {
+        margin-top: 60px;
+
+        font-size: 18px;
+
+        letter-spacing: 7px;
+
+        line-height: 1.9;
+    }
+
+    .hero-button {
+        margin-top: 60px;
+
+        height: 92px;
+
+        font-size: 25px;
+    }
+
+    section {
+        padding: 80px 43px;
+    }
+
+    .section-title {
+        margin-bottom: 65px;
+    }
+
+    .about {
+        min-height: 800px;
+    }
+
+    .about-text {
+        font-size: 23px;
+
+        line-height: 1.75;
+    }
+
+    .about-text p + p {
+        margin-top: 65px;
+    }
+
+    .song {
+        min-height: 245px;
+
+        padding: 45px 65px;
+
+        margin-bottom: 50px;
+    }
+
+    .song h3 {
+        font-size: 30px;
+    }
+
+    .song p {
+        font-size: 23px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+    <div class="logo">
+        FALLEN ANGELS
+    </div>
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <h1 class="hero-title">
+        FALLEN<br>
+        ANGELS
+    </h1>
+
+    <div class="hero-subtitle">
+        hard rock • rock • nu-metal •<br>
+        post-hardcore
+    </div>
+
+    <a href="#about" class="hero-button">
+        Enter the forsaken layer
+    </a>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+    <h2 class="section-title">
+        ABOUT
+    </h2>
+
+    <div class="about-text">
+
+        <p>
+            Fallen Angels is an alternative band
+            nu-metal, heavy metal,hard rock, and metak
+            melodies, and aggressive energy.
+        </p>
+
+        <p>
+            Welcome to the place where the fallen come
+            to play.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- MUSIC -->
+
+<section class="music" id="music">
+
+    <h2 class="section-title">
+        MUSIC
+    </h2>
+
+    <div class="song">
+        <h3>Superstitious</h3>
+        <p>hard rock</p>
+    </div>
+
+    <div class="song">
+        <h3>romes gone</h3>
+        <p>Alternative Rock / Metal</p>
+    </div>
+
+    <div class="song">
+        <h3>fallen</h3>
+        <p>hard rock</p>
+    </div>
+
+</section>
+
+
+<!-- MEMBERS -->
+
+<section id="members">
+
+    <h2 class="section-title">
+        THE FALLEN
+    </h2>
+
+    <div class="members">
+
+        <div class="member">
+            <h3>Guilberto</h3>
+            <p>Lead / Rhythm</p>
+        </div>
+
+        <div class="member">
+            <h3>Michael</h3>
+            <p>Harmony / Rhythm</p>
+        </div>
+
+        <div class="member">
+            <h3>Guilberto</h3>
+            <p>Lead Vocals</p>
+        </div>
+
+        <div class="member">
+            <h3>Michael</h3>
+            <p>Bass Guitar</p>
+        </div>
+        
+        <div class="member">
+          <h3>Michael</h3>
+          <p>Back up vocals>
+
+        <div class="member">
+            <h3>Drums</h3>
+            <p>Drums</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+    FALLEN ANGELS © 2026
+</footer>
+
+</body>
+</html>
